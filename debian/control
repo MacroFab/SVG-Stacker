@@ -1,0 +1,19 @@
+Source: svg-stacker
+Section: unknown
+Priority: optional
+Maintainer: Dan Holm <nobody@macrofab.net>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+Homepage: https://github.com/MacroFab/SVG-Stacker
+#Vcs-Git: git://git.debian.org/collab-maint/svg-stacker.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/svg-stacker.git;a=summary
+
+Package: svg-stacker
+Architecture: any
+Depends:
+Description: SVG stacking application
+
+# Package: svg-stacker-doc
+# Architecture: all
+# Description: documentation for svg-stacker
+#  <insert long description, indented with spaces>
