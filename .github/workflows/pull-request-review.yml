@@ -1,0 +1,24 @@
+name: Pull Request Review
+
+on:
+    pull_request:
+        types:
+            - opened
+            - reopened
+            - ready_for_review
+            - synchronize
+
+jobs:
+    run-action:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Execute Review
+              uses: MacroFab/pull-request-llm-review@master
+              with:
+                github_token: ${{ secrets.GITHUB_TOKEN }}
+                openai_api_key: ${{ secrets.MF_GITHUB_ACTION_OPENAI_API_KEY }}
+                jira_email: ${{ secrets.MF_GITHUB_ACTION_JIRA_EMAIL }}
+                jira_api_token: ${{ secrets.MF_GITHUB_ACTION_JIRA_API_TOKEN }}
+                prompt_options: "functionality,impact-and-scope,performance,security"    # See Action for more details
